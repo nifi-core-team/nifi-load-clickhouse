@@ -12,5 +12,5 @@ Flow for insertion data into ClickHouse.
  
  # Template
  There is a basic idea how to load data into clickhouse.
- * Distribute data by key[keys] in nifi and load result regardless on every shard 
+ * Distribute data by key[keys] in nifi and load result independently on every shard 
  

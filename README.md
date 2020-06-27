@@ -11,6 +11,7 @@ Flow for insertion data into ClickHouse.
  * install each *.nar file on own nifi instance (paste into `*/lib` folder)
  
  # Template
+ ### CLICKHOUSE_LOAD.xml
  There is a basic idea how to load data into clickhouse.
  * Distribute data by key[keys] in nifi and load result independently on every shard 
  

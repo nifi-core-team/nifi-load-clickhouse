@@ -26,7 +26,6 @@
     <artifactId>nifi-distribute-bundle</artifactId>
     <version>1.10.0</version>
     <packaging>pom</packaging>
-
     <modules>
         <module>nifi-distribute-processors</module>
         <module>nifi-distribute-nar</module>

@@ -2,10 +2,8 @@ package ru.tinkoff.dwh.processors.nifi;
 
 import org.apache.nifi.dbcp.DBCPService;
 import org.apache.nifi.flowfile.FlowFile;
-import org.apache.nifi.processor.Processor;
 import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.reporting.InitializationException;
-import org.apache.nifi.serialization.RecordReaderFactory;
 import org.apache.nifi.serialization.SimpleRecordSchema;
 import org.apache.nifi.serialization.record.ArrayListRecordReader;
 import org.apache.nifi.serialization.record.MapRecord;
@@ -21,7 +19,6 @@ import org.junit.Test;
 import org.junit.rules.TemporaryFolder;
 
 import java.io.File;
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,11 +27,9 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 import static org.apache.nifi.serialization.record.RecordFieldType.INT;
 import static org.apache.nifi.serialization.record.RecordFieldType.STRING;
@@ -186,7 +181,7 @@ public class PutClickHouseTest {
 	@Test
 	public void testSqlGenerating(){
 		PutClickHouse processor = new PutClickHouse();
-		String sqlInsert = processor.generateSql("EMART_MARTINI", List.of("id","callid","sequence"));
+		String sqlInsert = processor.generateSql("EMART_MARTINI", Arrays.asList("id","callid","sequence"));
 		assertEquals("INSERT INTO EMART_MARTINI (id,callid,sequence) VALUES (?,?,?)", sqlInsert);
 	}
 

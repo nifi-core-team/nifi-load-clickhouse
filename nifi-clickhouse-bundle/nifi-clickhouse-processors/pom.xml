@@ -24,7 +24,10 @@
 
     <artifactId>nifi-clickhouse-processors</artifactId>
     <packaging>jar</packaging>
-
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.apache.nifi</groupId>

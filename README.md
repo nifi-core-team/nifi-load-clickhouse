@@ -7,7 +7,7 @@ Flow for insertion data into ClickHouse.
 
 # Getting Started
  To build :
- * Execute `mvn clean install` for each bundle
+ * Execute `mvn clean install`
  * install each *.nar file on own nifi instance (paste into `*/lib` folder)
  
  # Template
